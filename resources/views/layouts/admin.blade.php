@@ -35,7 +35,7 @@
           <a class="navbar-brand" href="{{ url('/') }}">
             {{ config('app.name', 'Laravel') }}
           </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
           </button>
 
@@ -67,7 +67,7 @@
                       {{ __('Logout') }}
                     </a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POSTT" style="display: none;">
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                       @csrf
                     </form>
                   </div>
