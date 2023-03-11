@@ -40,8 +40,8 @@ class NewsController extends Controller
         $news->fill($form);
         $news->save();
 
-        // admin/news/createにリダイレクトする
-        return redirect('admin/news/create');
+        // admin/newsにリダイレクトする（カリキュラムにはないがこのほうが良いと思う）
+        return redirect('admin/news/');
     }
 
     // 一覧表示のための index アクション
