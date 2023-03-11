@@ -88,6 +88,16 @@ class NewsController extends Controller
         // 該当するデータを上書きして保存する
         $news->fill($news_form)->save(); // $news->fill(); $news->save()の短縮形
 
-        return redirect('admin/news');
+        return redirect('admin/news/');
+    }
+
+    // ニュースの削除をするための delete アクション
+    public function delete(Request $request) {
+        // 該当する News Modelを取得
+        $news = News::find($request->id);
+        // 削除する
+        $news->delete();
+
+        return redirect('admin/news/');
     }
 }
