@@ -37,9 +37,9 @@ class NewsController extends Controller
         unset($form['image']);
 
         // データベースに保存する
-        $news->file($form);
+        $news->fill($form);
         $news->save();
-        
+
         // admin/news/createにリダイレクトする
         return redirect('admin/news/create');
     }
