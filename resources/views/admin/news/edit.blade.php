@@ -28,7 +28,7 @@
             </div>
           </div>
           <div class="form-group row">
-            <div class="col-md-2" for="image">画像</div>
+            <label class="col-md-2" for="image">画像</label>
             <div class="col-md-10">
               <input type="file" class="form-control-file" name="image">
               <div class="form-text text-info">
@@ -36,7 +36,7 @@
               </div>
               <div class="form-check">
                 <label class="form-check-label">
-                  <inpu type="checkbox" class="form-check-input" name="remove" value="true">画像を削除
+                  <input type="checkbox" class="form-check-input" name="remove" value="true">画像を削除
                 </label>
               </div>
             </div>
@@ -49,6 +49,19 @@
             </div>
           </div>
         </form>
+        {{-- 編集履歴の表示 --}}
+        <div class="row mt-5">
+          <div class="col-md-4 mx-auto">
+            <h2>編集履歴</h2>
+            <ul class="list-group">
+              @if ($news_form->histories != NULL)
+                @foreach ($news_form->histories as $history)
+                  <li class="list-group-item">{{ $history->edited_at }}</li>
+                @endforeach
+              @endif
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
